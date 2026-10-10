@@ -18,7 +18,7 @@ public:
         for (int i = 0; i < SIZE; i++)
             prices[i] = 0;
     }
-    Chair(int l) {
+    Chair(int l, double arr1[]) {
         prices = new double[SIZE];
         legs = l;
         for (int i = 0; i < SIZE; i++)
@@ -47,6 +47,12 @@ public:
             cout << prices[i] << " ";
         cout << endl << "Historical avg price: " << getAveragePrices();
         cout << endl << endl;
+    }
+
+    double randomdouble(){
+        const int MIN = 10000, MAX = 99999;
+        double price = (rand() % (MAX-MIN+1)) / (double) 100;
+        return price;
     }
 };
 
