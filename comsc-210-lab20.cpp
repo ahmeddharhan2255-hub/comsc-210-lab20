@@ -43,12 +43,15 @@ public:
     }
 
     void print() {
+        cout << endl;
         cout << "CHAIR DATA - legs: " << legs << endl;
         cout << "Price history: " ;
         for (int i = 0; i < SIZE; i++)
             cout << prices[i] << " ";
         cout << endl << "Historical avg price: " << getAveragePrices();
         cout << endl << endl;
+        cout << "********************************" << endl;
+
     }
 
     double randomdouble(){
