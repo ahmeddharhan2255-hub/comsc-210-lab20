@@ -76,6 +76,10 @@ int main() {
 
     //creating dynamic array of chair objects
     Chair *collection = new Chair[SIZE];
+    double arr1[SIZE] = {441.41, 552.52, 663.63};
+    double arr2[SIZE] = {484.84, 959.59, 868.68};
+    double arr3[SIZE] = {626.26, 515.15, 757.57};
+
     collection[0].setLegs(4);
     collection[0].setPrices(collection->randomdouble(), collection->randomdouble(), collection->randomdouble());
     collection[1].setLegs(4);
