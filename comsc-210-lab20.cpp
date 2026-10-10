@@ -27,6 +27,12 @@ public:
             prices[i] = arr1[i];
     }
 
+    //Destructor
+
+    ~Chair() {
+        delete[] prices;
+    }
+
     // setters and getters
     void setLegs(int l)      { legs = l; }
     int getLegs()            { return legs; }
@@ -74,15 +80,22 @@ int main() {
     double arr2[SIZE] = {525.25, 434.34, 252.52};
     Chair *livingChair = new Chair(3,arr2);
     livingChair->print();
-    delete livingChair;
-    livingChair = nullptr;
 
     //creating dynamic array of chair objects
     Chair *collection = new Chair[SIZE];
     
 
-    for (int i = 0; i < SIZE; i++)
+    for (int i = 0; i < SIZE; i++){
         collection[i].print();
-    
+    }
+
+    delete chairPtr;
+    delete[] collection;
+    delete livingChair;
+
+    livingChair = nullptr;
+    chairPtr = nullptr;
+
     return 0;
+
 }
