@@ -22,7 +22,7 @@ public:
         prices = new double[SIZE];
         legs = l;
         for (int i = 0; i < SIZE; i++)
-            prices[i] = 0;
+            prices[i] = arr1[i];
     }
 
     // setters and getters
@@ -51,7 +51,7 @@ public:
 
     double randomdouble(){
         const int MIN = 10000, MAX = 99999;
-        double price = (rand() % (MAX-MIN+1)) / (double) 100;
+        double price = (rand() % (MAX-MIN+1) + MIN) / (double) 100;
         return price;
     }
 };
@@ -75,11 +75,11 @@ int main() {
     //creating dynamic array of chair objects
     Chair *collection = new Chair[SIZE];
     collection[0].setLegs(4);
-    collection[0].setPrices(441.41, 552.52, 663.63);
+    collection[0].setPrices(collection->randomdouble(), collection->randomdouble(), collection->randomdouble());
     collection[1].setLegs(4);
-    collection[1].setPrices(484.84, 959.59, 868.68);
+    collection[1].setPrices(collection->randomdouble(), collection->randomdouble(), collection->randomdouble());
     collection[2].setLegs(4);
-    collection[2].setPrices(626.26, 515.15, 757.57);
+    collection[2].setPrices(collection->randomdouble(), collection->randomdouble(), collection->randomdouble());
     for (int i = 0; i < SIZE; i++)
         collection[i].print();
     
